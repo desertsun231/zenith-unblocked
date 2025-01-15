@@ -23,6 +23,20 @@
             padding: 10px 20px;
             font-size: 1em;
         }
+        #iframe-container {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: white;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
     </style>
 </head>
 <body>
@@ -31,6 +45,9 @@
     <button id="runButton" disabled>Run Game in this tab</button>
     <br />
     <button id="abtblk" disabled>Run game in about:blank tab</button>
+    <div id="iframe-container">
+        <iframe id="gameIframe"></iframe>
+    </div>
 
     <script>
         let htmlContent = '';
@@ -42,6 +59,7 @@
                 reader.onload = function(e) {
                     htmlContent = e.target.result;
                     document.getElementById('abtblk').disabled = false;
+                    document.getElementById('runButton').disabled = false;
                 };
                 reader.readAsText(file);
             }
@@ -56,6 +74,13 @@
             } else {
                 alert('Please allow popups for this page.');
             }
+        });
+
+        document.getElementById('runButton').addEventListener('click', function() {
+            const iframeContainer = document.getElementById('iframe-container');
+            const gameIframe = document.getElementById('gameIframe');
+            iframeContainer.style.display = 'block';
+            gameIframe.srcdoc = htmlContent;
         });
     </script>
 </body>
