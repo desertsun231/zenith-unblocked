@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--
+                        THIS IS THE HTML ONLY VERSION FOR MINECRAFT.
+-->
+<html lang="eng">
+    <!--     styles     -->
+<meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .javascript-notification {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 300px;
+    height: 115px;
+    background-color: white;
+    border: 3px solid #000;
+    padding: 10px;
+    z-index: 1000;
+}
+        body {
+  margin: 0;
+  font-family: calibri;
+}
+        .header {
+  padding: 12px;
+  text-align: left;
+  background: #000;
+  color: white;
+  font-size: 12px;
+  font-family: calibri;
+}
+        .gamelist {
+  margin-left: 100px;
+  
+}
+        .everydiv {
+  margin-left: 100px;
+  
+}
+    </style>
+    <!--     content     -->
+<title>Minecraft Zenith V1.0</title>
+  <link rel="icon" type="image/x-icon" href="data:image/png;base64,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">
+    <body>
+<div class="javascript-notification">
+        You are currently runnning the <mark style="color: white; background-color: red;">HTML Only</mark> version. Click below to switch to the JavaScript version. <a href="/assets/abt.html">Learn more</a><br /><span style="font-size: 22px;"><a style="color: inherit; font-size: 22px;" href="/assets/javascript_main.html">Click here to switch to the Javascript version</a></span>
+        
+    </div>
+    <div class="header" style="font-size: 30px">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a style="text-decoration: none; color: inherit; font-size: 35px" href="/main.html">Zenith</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a style="text-decoration: none; color: inherit; font-size: 25px" href="/assets/gms.html">Games</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a style="text-decoration: none; color: inherit; font-size: 25px" href="/assets/haks.html">Hacks</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a style="text-decoration: none; color: inherit; font-size: 25px" href="/assets/abt.html">About</a>
+</div>
+<span class="everydiv" style="font-size: 70px;">Minecraft 1.5.2</span>
+<br />
+<span class="everydiv" style="font-size: 25px;">Scroll down to see download options</span>
+<div class="everydiv" style="display: flex; height: 500px; width: 75%; position: relative;">
+    <div style="background: lightgreen; position: absolute; height: 275px; width: 800px;">
+    <span style="font-size: 50px;" class="everydiv">Offline Download</span>
+    <br />
+    <span class="everydiv" style="font-size: 25px;"><a href="https://download.example.com" target="_blank">Click Here to download the offline version for Minecraft</a></span>
+    <br />
+    <br />
+    <span class="everydiv" style="font-size: 20px;">Instructions:<br /><span class="everydiv" style="font-size: 15px !important;">Click the download link, then download the emulator (if you haven't already). Then, run the emulator<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;using a veiwer. (EX: <a href="https://codebeautify.org/htmlviewer" target="_blank">https://codebeautify.org/htmlviewer</a> or <a href="https://jsonformatter.org/html-viewer" target="_blank">https://jsonformatter.org/html-viewer</a>.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can also find more <a href="https://www.google.com/search?surl=1&q=html+viewer" target="_blank">here</a>).</span></span>
+    <span
+    </div>
+    <div style="background: lightblue; position: absolute; height: 275px; width: 800px;">
+    <span class="everydiv" style="font-size: 50px;">Online Download</span>
+    <br />
+    <span class="everydiv" style="font-size: 20px;">There is not yet an online download for this game.</span>
+    <br />
+    </div>
+</div>
+
+<div style=" position: absolute; top: 500px; right: 0px; left: 0px;">
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<!--     Footer     -->
+<div style="height: 175px; width: 100%; background: black; margin-left: 0 !important;">
+<br />
+<span class="everydiv" style="font-size: 40px; color: white; margin-top: 50px;"><a style="color: inherit; text-decoration: none;" href="/main.html">Zenith V1.0</a></span>
+<span style="font-size: 35px; color: white; margin-top: 50px; margin-left: 150px !important;"><a style="color: inherit; text-decoration: none;" href="/assets/gms.html">Games</a></span>
+<span style="font-size: 35px; color: white; margin-top: 50px; margin-left: 150px !important;"><a style="color: inherit; text-decoration: none;" href="/assets/haks.html">Hacks/Tricks</a></span>
+<br />
+<br />
+<br />
+<span class="everydiv" style="font-size: 35px; color: white; margin-top: 50px;"><a style="color: inherit; text-decoration: none;" href="/assets/abt.html">About</a></span>
+<span style="font-size: 35px; color: white; margin-top: 50px; margin-left: 110px !important;"><a style="color: inherit; text-decoration: none;" href="https://example.com">Report a problem</a></span>
+<span style="font-size: 35px; color: white; margin-top: 50px; margin-left: 110px !important;"><a style="color: inherit; text-decoration: none;" href="https://example.com">Become a contributer</a></span>
+</div>
+</div>
+</body>
+</html>
