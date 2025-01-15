@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenith game emulator</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: calibri;
+        }
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Zenith game emulator</h1>
+    <input type="file" id="gamefile" accept=".zenith">
+    <button id="runButton" disabled>Run Game in this tab</button>
+    <br />
+    <button id="abtblk" disabled>Run game in about:blank tab</button>
+
+    <script>
+        let htmlContent = '';
+
+        document.getElementById('gamefile').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    htmlContent = e.target.result;
+                    document.getElementById('abtblk').disabled = false;
+                };
+                reader.readAsText(file);
+            }
+        });
+
+        document.getElementById('abtblk').addEventListener('click', function() {
+            const newWindow = window.open('about:blank', '_blank');
+            if (newWindow) {
+                newWindow.document.open();
+                newWindow.document.write(htmlContent);
+                newWindow.document.close();
+            } else {
+                alert('Please allow popups for this page.');
+            }
+        });
+    </script>
+</body>
+</html>
